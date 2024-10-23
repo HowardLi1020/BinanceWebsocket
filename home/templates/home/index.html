@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幣安實時交易數據</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/styles.css' %}">  <!-- 確保使用正確的路徑 -->
+</head>
+<body>
+    <div class="container">
+        <h1>幣安實時交易數據</h1>
+        <div id="data-display">
+            <h2>交易數據</h2>
+            <div id="trade-info">
+                <p>價格: <span id="price">0</span></p>
+                <p>數量: <span id="quantity">0</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'home/script.js' %}"></script>  <!-- 確保使用正確的路徑 -->
+</body>
+</html>
