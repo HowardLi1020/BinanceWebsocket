@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j3ea*o*grc+6crv+yy=gbgp45cu^n0jn_8l3#h1koy1&^12ex0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -76,7 +76,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'BinanceWebsocket.wsgi.application'
 
-
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 8000)],
+        },
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 

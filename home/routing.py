@@ -1,7 +1,7 @@
 # home/routing.py
-from django.urls import path
+from django.urls import re_path
 from . import consumers
 
 websocket_urlpatterns = [
-    path('ws/binance/', consumers.BinanceConsumer.as_asgi()),  # 確保路徑與前端匹配
+    re_path(r'ws/binance/$', consumers.Binance.as_asgi()),
 ]
