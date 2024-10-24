@@ -6,13 +6,14 @@ socket.onopen = function() {
 
 socket.onmessage = function(event) {
     console.log("收到數據: ", event.data);
+    const data = JSON.parse(event.data);
+    document.getElementById('price').innerText = data.price; // 更新前端顯示
 };
 
 socket.onclose = function(event) {
-    console.log("WebSocket 連接已關閉");
-    console.log("Close event: ", event);  // 檢查關閉事件是否包含更多信息
+    console.log("WebSocket 連接已關閉，代碼: ", event.code);
 };
 
 socket.onerror = function(error) {
-    console.error("WebSocket 錯誤: ", error);  // 捕捉錯誤信息
+    console.error("WebSocket 錯誤: ", error);
 };
